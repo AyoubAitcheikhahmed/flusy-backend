@@ -1,5 +1,5 @@
 import express from 'express';
-import { createTable, getTablesByRestaurant } from "../controllers/tables.controller.js";
+import { createTable, getTablesByRestaurant ,test} from "../controllers/tables.controller.js";
 
 const router = express.Router();
 
@@ -8,5 +8,5 @@ router.post('/create', createTable);
 
 // Get tables by restaurant
 router.get('/:restaurantId', getTablesByRestaurant);
-
+router.get('/', test);
 export default router;

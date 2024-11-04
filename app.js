@@ -30,6 +30,7 @@ app.use("/api/tables", tableRoute)
 
 
 
+
 const PORT = process.env.PORT || 8080;
 
 figlet('Flusy-API Server', (err, data) => {

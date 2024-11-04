@@ -80,3 +80,14 @@ export const getTablesByRestaurant = async (req, res) => {
     }
 };
 
+
+export const test = async (req, res) => {
+    console.log("GETTING TABLES REST ");
+    try {
+
+        return res.json("TEST GETTING TABLES");
+    } catch (error) {
+        console.error('Error retrieving tables:', error);
+        return res.status(500).json({ message: 'Failed to retrieve tables.' });
+    }
+};
