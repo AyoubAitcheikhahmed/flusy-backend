@@ -1,0 +1,23 @@
+# CertiCheck API Project
+
+Welcome to the Console Ninja project! This is a Node.js application using Prisma for database management.
+
+## Getting Started
+
+To get started with the project, you'll need to set up your development environment. Follow these instructions to get up and running:
+
+### Installation
+
+```
+npm install
+
+npx prisma generate
+
+console-ninja node --env-file .env --watch app.js
+
+```
+
+## codes for developers
+
+//to push new database tables
+npx prisma db push

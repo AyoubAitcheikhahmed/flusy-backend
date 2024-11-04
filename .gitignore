@@ -1,0 +1,46 @@
+# Node modules directory
+node_modules/
+
+# Log files
+*.log
+
+# Dependency directories
+jspm_packages/
+
+# Environment files
+.env
+.env.*.local
+
+# OS-specific files
+.DS_Store
+Thumbs.db
+
+# IDE/editor files
+.vscode/
+.idea/
+*.sublime-project
+*.sublime-workspace
+
+# npm package lock file
+package-lock.json
+
+# Build directories
+dist/
+build/
+
+# Coverage directory for testing
+coverage/
+
+# Temporary files
+*.tmp
+*.swp
+*.swo
+
+# Local env files
+*.local
+
+
+
+.dockerignore
+
+

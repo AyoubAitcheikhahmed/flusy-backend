@@ -1,0 +1,51 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "mongodb"
+  url      = env("DATABASE_URL")
+}
+
+model RestaurantOwner {
+  id          String       @id @default(auto()) @map("_id") @db.ObjectId
+  email       String       @unique
+  password    String
+  firstName   String
+  lastName    String
+  restaurants Restaurant[]
+}
+
+model Restaurant {
+  id                String          @id @default(auto()) @map("_id") @db.ObjectId
+  name              String
+  address           String
+  restaurantOwnerId String
+  restaurantOwner   RestaurantOwner @relation(fields: [restaurantOwnerId], references: [id])
+  reservations      Reservation[]
+  tables            Table[] 
+}
+
+model Reservation {
+  id                  String     @id @default(auto()) @map("_id") @db.ObjectId
+  firstName           String
+  lastName            String
+  email               String
+  numPeople           Int
+  description         String
+  createdAt           DateTime   @default(now())
+  reservationDateTime DateTime
+  restaurantId        String
+  restaurant          Restaurant @relation(fields: [restaurantId], references: [id])
+}
+
+model Table {
+  id           String     @id @default(auto()) @map("_id") @db.ObjectId
+  seats        Int
+  shape        String
+  x            Float
+  y            Float
+  restaurantId String
+  zone         String
+  restaurant   Restaurant @relation(fields: [restaurantId], references: [id])
+}
