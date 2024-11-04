@@ -7,7 +7,7 @@ import authRoute from "./src/routes/auth.route.js";
 import userRoute from "./src/routes/user.route.js"
 import reservationRoute from './src/routes/reservation.route.js'
 import tableRoute from './src/routes/table.route.js'
-
+import defaultRoute from './src/routes/default.route.js'
 const app = express();
 
 
@@ -19,7 +19,7 @@ app.use(express.json());
 app.use(cookieParser());
 
 
-
+app.use("/", defaultRoute);
 
 app.use("/api/user", userRoute);
 app.use("/api/auth", authRoute);
