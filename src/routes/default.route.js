@@ -6,7 +6,8 @@ const prisma = new PrismaClient();
 
 const defaultRequestMapping = async (req, res) => {
 
-    const owners = await prisma.restaurantOwner.findMany({
+try {
+      const owners = await prisma.restaurantOwner.findMany({
       select: {
         id: true,
         firstName: true,
@@ -30,6 +31,9 @@ const defaultRequestMapping = async (req, res) => {
     ));
 
     res.status(200).json(owner);
+} catch (error) {
+  res.status(404).json(error);
+}
 };
 
 // Set up the route to use the register function
